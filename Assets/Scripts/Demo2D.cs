@@ -1,8 +1,8 @@
-﻿using LlamAcademy.Spring;
-using LlamAcademy.Spring.Runtime;
+﻿using LlamAcademy.Spring.Runtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class Demo2D : MonoBehaviour
 {
@@ -10,12 +10,12 @@ public class Demo2D : MonoBehaviour
     private Transform Target;
     [SerializeField]
     private TMP_InputField RotationInputField;
+    [FormerlySerializedAs("SpringToTarget")] [SerializeField]
+    private SpringTarget2D springTarget;
     [SerializeField]
-    private SpringToTarget2D SpringToTarget;
+    private SpringRotation RotationSpring;
     [SerializeField]
-    private SpringToRotation RotationSpring;
-    [SerializeField]
-    private SpringToScale ScaleSpring;
+    private SpringScale ScaleSpring;
     [SerializeField]
     [Range(1, 10)]
     private float NudgeFrequency = 5;
@@ -64,12 +64,12 @@ public class Demo2D : MonoBehaviour
             && Mouse.current.leftButton.wasReleasedThisFrame)
         {
             Target.transform.position = Mouse.current.position.ReadValue();
-            SpringToTarget.SpringTo(Target.transform.position);
+            springTarget.SpringTo(Target.transform.position);
         }
 
         if (IsNudgingEnabled && LastMovementNudge + NudgeFrequency < Time.time)
         {
-            SpringToTarget.Nudge(PositionNudgeAmount);
+            springTarget.Nudge(PositionNudgeAmount);
             LastMovementNudge = Time.time;
         }
         if (IsNudgingEnabled && LastRotationNudge + NudgeFrequency < Time.time)

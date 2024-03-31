@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace LlamAcademy.Spring.Runtime
 {
-    public class SpringToTarget2D : BaseSpringBehaviour, ISpringTo<Vector2>, INudgeable<Vector2>
+    public class SpringTarget2D : BaseSpringBehaviour, ISpring<Vector2>, INudge<Vector2>
     {
         private SpringVector2 Spring;
 
@@ -32,9 +32,7 @@ namespace LlamAcademy.Spring.Runtime
             }
 
             while (!Mathf.Approximately(Vector2.SqrMagnitude(
-                    new Vector2(transform.position.x,
-                        transform.position.y
-                        ) - TargetPosition), 0))
+                    new Vector2(transform.position.x, transform.position.y) - TargetPosition), 0))
             {
                 transform.position = Spring.Evaluate(Time.deltaTime);
 

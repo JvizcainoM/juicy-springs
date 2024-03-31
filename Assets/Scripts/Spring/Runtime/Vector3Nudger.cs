@@ -27,7 +27,7 @@ namespace LlamAcademy.Spring.Runtime
 
         public void Nudge()
         {
-            (Nudgeable as INudgeable<Vector3>).Nudge(NudgeAmount);
+            (Nudgeable as INudge<Vector3>).Nudge(NudgeAmount);
             LastNudgeTime = Time.time;
             NextNudgeFrequency = Random.Range(NudgeFrequency.x, NudgeFrequency.y);
         }

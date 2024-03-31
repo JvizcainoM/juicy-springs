@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace LlamAcademy.Spring.Runtime
 {
-    public class SpringToScale : BaseSpringBehaviour, ISpringTo<Vector3>, INudgeable<Vector3>
+    public class SpringScale : BaseSpringBehaviour, ISpring<Vector3>, INudge<Vector3>
     {
         private SpringVector3 Spring;
 

@@ -1,7 +1,7 @@
 namespace LlamAcademy.Spring.Runtime
 {
-    public interface ISpringTo<T>
+    public interface ISpring<in T>
     {
-        void SpringTo(T Target);
+        void SpringTo(T target);
     }
 }

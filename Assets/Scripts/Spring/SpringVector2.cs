@@ -9,7 +9,7 @@ namespace LlamAcademy.Spring
 
         public override float Damping
         {
-            get { return base.Damping; }
+            get => base.Damping;
             set
             {
                 XSpring.Damping = value;
@@ -20,7 +20,7 @@ namespace LlamAcademy.Spring
 
         public override float Stiffness
         {
-            get { return base.Stiffness; }
+            get => base.Stiffness;
             set
             {
                 XSpring.Stiffness = value;

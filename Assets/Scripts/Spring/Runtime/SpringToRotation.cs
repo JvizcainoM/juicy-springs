@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace LlamAcademy.Spring.Runtime
 {
-    public class SpringToRotation : BaseSpringBehaviour, ISpringTo<Vector3>, ISpringTo<Quaternion>, INudgeable<Vector3>, INudgeable<Quaternion>
+    public class SpringRotation : BaseSpringBehaviour, ISpring<Vector3>, ISpring<Quaternion>, INudge<Vector3>, INudge<Quaternion>
     {
         private SpringVector3 Spring;
 

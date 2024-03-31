@@ -30,7 +30,7 @@ namespace LlamAcademy.Spring
         ///
         /// Proof and derived from http://www.ryanjuckett.com/programming/damped-springs/
         /// </summary>
-        protected float SpringTime;
+        private float SpringTime;
 
         public override void Reset()
         {
